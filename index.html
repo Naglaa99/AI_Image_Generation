@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate picture by Ai</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <h2>AI Images Generator</h2>
+    <div class="images">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <form>
+    <div class="prompt">
+        <input type="text" id="input">
+        <button type="submit" onclick="getImages()">Generate</button>
+        <button id="speechButton" class="speech-icon-button">
+            <i class="fas fa-microphone"></i>
+        </button>
+    </div>
+    </form>
+    <div id="loading" >Loading ...</div>
+    <div id="error" ></div>
+    <script src="script.js"></script>
+</body>
+</html>
