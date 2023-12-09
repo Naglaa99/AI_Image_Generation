@@ -9,7 +9,7 @@ const getImages = async () => {
     error.style.display = 'none';
 
     try {
-        const methods = {
+        const fetchOptions = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const getImages = async () => {
             })
         };
 
-        const res = await fetch("https://api.openai.com/v1/images/generations", methods);
+        const res = await fetch("https://api.openai.com/v1/images/generations", fetchOptions);
 
         if (!res.ok) {
             throw new Error(`Error: ${res.status} - ${res.statusText}`);
@@ -31,9 +31,9 @@ const getImages = async () => {
         const data = await res.json();
         const listImages = data.data;
 
-        images.innerHTML = '';
+        images.textContent = '';
 
-        listImages.map(photo => {
+        listImages.forEach(photo => {
             const container = document.createElement('div');
             images.append(container);
             const img = document.createElement('img');
@@ -44,8 +44,7 @@ const getImages = async () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops!',
-            text: 'Something went wrong while Generate Images. Please try again later.',
-            
+            text: `Something went wrong while generating images. Error: ${err.message}`,
         });
         error.style.display = 'block';
     } finally {
@@ -53,8 +52,7 @@ const getImages = async () => {
     }
 };
 
-
-//Function to handle speech input
+// Function to handle speech input
 const handleSpeechInput = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
@@ -81,5 +79,3 @@ const handleSpeechInput = () => {
 };
 
 document.getElementById('speechButton').addEventListener('click', handleSpeechInput);
-
-
