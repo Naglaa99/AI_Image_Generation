@@ -12,4 +12,4 @@
 ![preview img](./screen_preview/desk.png)
 ![preview img](./screen_preview/mob.png)
 
-- Live Site URL: []
+- Live Site URL: [https://naglaa99.github.io/AI_Image_Generation/]
