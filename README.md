@@ -12,4 +12,3 @@
 ![preview img](./screen_preview/desk.png)
 ![preview img](./screen_preview/mob.png)
 
-- Live Site URL: []
