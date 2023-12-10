@@ -1,4 +1,4 @@
-const api = "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";
+const api = "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";
 const images = document.querySelector('.images');
 const input = document.getElementById('input');
 const loading = document.getElementById('loading');
@@ -29,6 +29,7 @@ const getImages = async () => {
         }
 
         const data = await res.json();
+        console.log(data)
         const listImages = data.data;
 
         images.textContent = '';
@@ -44,7 +45,7 @@ const getImages = async () => {
         Swal.fire({
             icon: 'error',
             title: 'Oops!',
-            text: `Something went wrong while generating images. Error: ${err.message}`,
+            text: `Something went wrong while generating images.`,
         });
         error.style.display = 'block';
     } finally {
